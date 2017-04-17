@@ -1,0 +1,508 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/matthewkastor/object-merge/"
+
+    >object-merge (v2.5.1)</a>
+</h1>
+<h4>Merges JavaScript objects recursively without altering the objects merged.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.object-merge">module object-merge</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.object-merge">
+            function <span class="apidocSignatureSpan"></span>object-merge
+            <span class="apidocSignatureSpan">(shadows)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.createOptions">
+            function <span class="apidocSignatureSpan">object-merge.</span>createOptions
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.object_merge">
+            function <span class="apidocSignatureSpan">object-merge.</span>object_merge
+            <span class="apidocSignatureSpan">(shadows)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.toString">
+            function <span class="apidocSignatureSpan">object-merge.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.object-merge.createOptions">module object-merge.createOptions</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.createOptions.createOptions">
+            function <span class="apidocSignatureSpan">object-merge.</span>createOptions
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.object-merge.toString">module object-merge.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.toString.toString">
+            function <span class="apidocSignatureSpan">object-merge.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.object-merge" id="apidoc.module.object-merge">module object-merge</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.object-merge" id="apidoc.element.object-merge.object-merge">
+        function <span class="apidocSignatureSpan"></span>object-merge
+        <span class="apidocSignatureSpan">(shadows)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function objectMerge(shadows) {
+    &#x27;use strict&#x27;;
+    var objectForeach = require(&#x27;object-foreach&#x27;);
+    var cloneFunction = require(&#x27;clone-function&#x27;);
+    // this is the queue of visited objects / properties.
+    var visited = [];
+    // various merge options
+    var options = {};
+    // gets the sequential trailing objects from array.
+    function getShadowObjects(shadows) {
+        var out = shadows.reduce(function (collector, shadow) {
+                if (shadow instanceof Object) {
+                    collector.push(shadow);
+                } else {
+                    collector = [];
+                }
+                return collector;
+            }, []);
+        return out;
+    }
+    // gets either a new object of the proper type or the last primitive value
+    function getOutputObject(shadows) {
+        var out;
+        var lastShadow = shadows[shadows.length - 1];
+        if (lastShadow instanceof Array) {
+            out = [];
+        } else if (lastShadow instanceof Function) {
+            try {
+                out = cloneFunction(lastShadow);
+            } catch (e) {
+                throw new Error(e.message);
+            }
+        } else if (lastShadow instanceof Object) {
+            out = {};
+        } else {
+            // lastShadow is a primitive value;
+            out = lastShadow;
+        }
+        return out;
+    }
+    // checks for circular references
+    function circularReferenceCheck(shadows) {
+        // if any of the current objects to process exist in the queue
+        // then throw an error.
+        shadows.forEach(function (item) {
+            if (item instanceof Object &#x26;&#x26; visited.indexOf(item) &#x3e; -1) {
+                throw new Error(&#x27;Circular reference error&#x27;);
+            }
+        });
+        // if none of the current objects were in the queue
+        // then add references to the queue.
+        visited = visited.concat(shadows);
+    }
+    function objectMergeRecursor(shadows, currentDepth) {
+        if (options.depth !== false) {
+            currentDepth = currentDepth ? currentDepth + 1 : 1;
+        } else {
+            currentDepth = 0;
+        }
+        if (options.throwOnCircularRef === true) {
+            circularReferenceCheck(shadows);
+        }
+        var out = getOutputObject(shadows);
+        /*jslint unparam: true */
+        function shadowHandler(val, prop, shadow) {
+            if (out[prop]) {
+                out[prop] = objectMergeRecursor([
+                    out[prop],
+                    shadow[prop]
+                ], currentDepth);
+            } else {
+                out[prop] = objectMergeRecursor([shadow[prop]], currentDepth);
+            }
+        }
+        /*jslint unparam:false */
+        function shadowMerger(shadow) {
+            objectForeach(shadow, shadowHandler);
+        }
+        // short circuits case where output would be a primitive value
+        // anyway.
+        if (out instanceof Object &#x26;&#x26; currentDepth &#x3c;= options.depth) {
+            // only merges trailing objects since primitives would wipe out
+            // previous objects, as in merging {a:&#x27;a&#x27;}, &#x27;a&#x27;, and {b:&#x27;b&#x27;}
+            // would result in {b:&#x27;b&#x27;} so the first two arguments
+            // can be ignored completely.
+            var relevantShadows = getShadowObjects(shadows);
+            relevantShadows.forEach(shadowMerger);
+        }
+        return out;
+    }
+    // determines whether an options object was passed in and
+    // uses it if present
+    // ignore the jslint warning here too.
+    if (arguments[0] instanceof ObjectMergeOptions) {
+        options = arguments[0];
+        shadows = Array.prototype.slice.call(arguments, 1);
+    } else {
+        options = createOptions();
+        shadows = Array.prototype.slice.call(arguments, 0);
+    }
+    return objectMergeRecursor(shadows);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.createOptions" id="apidoc.element.object-merge.createOptions">
+        function <span class="apidocSignatureSpan">object-merge.</span>createOptions
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createOptions(opts) {
+    &#x27;use strict&#x27;;
+    var argz = Array.prototype.slice.call(arguments, 0);
+    argz.unshift(null);
+    var F = ObjectMergeOptions.bind.apply(ObjectMergeOptions, argz);
+    return new F();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var b = {
+    &#x27;b1&#x27; : {
+        &#x27;b2&#x27; : {
+            &#x27;b3&#x27; : {}
+        }
+    }
+};
+var opts = objectMerge.<span class="apidocCodeKeywordSpan">createOptions</span>({depth : 2});
+var res = objectMerge(opts, a, b);
+// res will be
+// {
+//     &#x27;a1&#x27; : {
+//         &#x27;a2&#x27; : {}
+//     },
+//     &#x27;b1&#x27; : {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.object_merge" id="apidoc.element.object-merge.object_merge">
+        function <span class="apidocSignatureSpan">object-merge.</span>object_merge
+        <span class="apidocSignatureSpan">(shadows)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function objectMerge(shadows) {
+    &#x27;use strict&#x27;;
+    var objectForeach = require(&#x27;object-foreach&#x27;);
+    var cloneFunction = require(&#x27;clone-function&#x27;);
+    // this is the queue of visited objects / properties.
+    var visited = [];
+    // various merge options
+    var options = {};
+    // gets the sequential trailing objects from array.
+    function getShadowObjects(shadows) {
+        var out = shadows.reduce(function (collector, shadow) {
+                if (shadow instanceof Object) {
+                    collector.push(shadow);
+                } else {
+                    collector = [];
+                }
+                return collector;
+            }, []);
+        return out;
+    }
+    // gets either a new object of the proper type or the last primitive value
+    function getOutputObject(shadows) {
+        var out;
+        var lastShadow = shadows[shadows.length - 1];
+        if (lastShadow instanceof Array) {
+            out = [];
+        } else if (lastShadow instanceof Function) {
+            try {
+                out = cloneFunction(lastShadow);
+            } catch (e) {
+                throw new Error(e.message);
+            }
+        } else if (lastShadow instanceof Object) {
+            out = {};
+        } else {
+            // lastShadow is a primitive value;
+            out = lastShadow;
+        }
+        return out;
+    }
+    // checks for circular references
+    function circularReferenceCheck(shadows) {
+        // if any of the current objects to process exist in the queue
+        // then throw an error.
+        shadows.forEach(function (item) {
+            if (item instanceof Object &#x26;&#x26; visited.indexOf(item) &#x3e; -1) {
+                throw new Error(&#x27;Circular reference error&#x27;);
+            }
+        });
+        // if none of the current objects were in the queue
+        // then add references to the queue.
+        visited = visited.concat(shadows);
+    }
+    function objectMergeRecursor(shadows, currentDepth) {
+        if (options.depth !== false) {
+            currentDepth = currentDepth ? currentDepth + 1 : 1;
+        } else {
+            currentDepth = 0;
+        }
+        if (options.throwOnCircularRef === true) {
+            circularReferenceCheck(shadows);
+        }
+        var out = getOutputObject(shadows);
+        /*jslint unparam: true */
+        function shadowHandler(val, prop, shadow) {
+            if (out[prop]) {
+                out[prop] = objectMergeRecursor([
+                    out[prop],
+                    shadow[prop]
+                ], currentDepth);
+            } else {
+                out[prop] = objectMergeRecursor([shadow[prop]], currentDepth);
+            }
+        }
+        /*jslint unparam:false */
+        function shadowMerger(shadow) {
+            objectForeach(shadow, shadowHandler);
+        }
+        // short circuits case where output would be a primitive value
+        // anyway.
+        if (out instanceof Object &#x26;&#x26; currentDepth &#x3c;= options.depth) {
+            // only merges trailing objects since primitives would wipe out
+            // previous objects, as in merging {a:&#x27;a&#x27;}, &#x27;a&#x27;, and {b:&#x27;b&#x27;}
+            // would result in {b:&#x27;b&#x27;} so the first two arguments
+            // can be ignored completely.
+            var relevantShadows = getShadowObjects(shadows);
+            relevantShadows.forEach(shadowMerger);
+        }
+        return out;
+    }
+    // determines whether an options object was passed in and
+    // uses it if present
+    // ignore the jslint warning here too.
+    if (arguments[0] instanceof ObjectMergeOptions) {
+        options = arguments[0];
+        shadows = Array.prototype.slice.call(arguments, 1);
+    } else {
+        options = createOptions();
+        shadows = Array.prototype.slice.call(arguments, 0);
+    }
+    return objectMergeRecursor(shadows);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.toString" id="apidoc.element.object-merge.toString">
+        function <span class="apidocSignatureSpan">object-merge.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {Function} func The function to clone.
+ * @returns {Function} Returns a clone of the non native function, or a
+ *  reference to the native function.
+ */
+function cloneFunction(func) {
+var out, str;
+try {
+    str = func.<span class="apidocCodeKeywordSpan">toString</span>();
+    if (/\[native code\]/.test(str)) {
+        out = func;
+    } else {
+        out = eval(&#x27;(function(){return &#x27; + str + &#x27;}());&#x27;);
+    }
+} catch (e) {
+    throw new Error(e.message + &#x27;\r\n\r\n&#x27; + str);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.object-merge.createOptions" id="apidoc.module.object-merge.createOptions">module object-merge.createOptions</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.createOptions.createOptions" id="apidoc.element.object-merge.createOptions.createOptions">
+        function <span class="apidocSignatureSpan">object-merge.</span>createOptions
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createOptions(opts) {
+    &#x27;use strict&#x27;;
+    var argz = Array.prototype.slice.call(arguments, 0);
+    argz.unshift(null);
+    var F = ObjectMergeOptions.bind.apply(ObjectMergeOptions, argz);
+    return new F();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var b = {
+    &#x27;b1&#x27; : {
+        &#x27;b2&#x27; : {
+            &#x27;b3&#x27; : {}
+        }
+    }
+};
+var opts = objectMerge.<span class="apidocCodeKeywordSpan">createOptions</span>({depth : 2});
+var res = objectMerge(opts, a, b);
+// res will be
+// {
+//     &#x27;a1&#x27; : {
+//         &#x27;a2&#x27; : {}
+//     },
+//     &#x27;b1&#x27; : {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.object-merge.toString" id="apidoc.module.object-merge.toString">module object-merge.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.toString.toString" id="apidoc.element.object-merge.toString.toString">
+        function <span class="apidocSignatureSpan">object-merge.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {Function} func The function to clone.
+ * @returns {Function} Returns a clone of the non native function, or a
+ *  reference to the native function.
+ */
+function cloneFunction(func) {
+var out, str;
+try {
+    str = func.<span class="apidocCodeKeywordSpan">toString</span>();
+    if (/\[native code\]/.test(str)) {
+        out = func;
+    } else {
+        out = eval(&#x27;(function(){return &#x27; + str + &#x27;}());&#x27;);
+    }
+} catch (e) {
+    throw new Error(e.message + &#x27;\r\n\r\n&#x27; + str);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
