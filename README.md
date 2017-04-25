@@ -1,4 +1,7 @@
-# api documentation for  [object-merge (v2.5.1)](https://github.com/matthewkastor/object-merge/)  [![npm package](https://img.shields.io/npm/v/npmdoc-object-merge.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-object-merge) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-object-merge.svg)](https://travis-ci.org/npmdoc/node-npmdoc-object-merge)
+# npmdoc-object-merge
+
+#### basic api documentation for  [object-merge (v2.5.1)](https://github.com/matthewkastor/object-merge/)  [![npm package](https://img.shields.io/npm/v/npmdoc-object-merge.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-object-merge) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-object-merge.svg)](https://travis-ci.org/npmdoc/node-npmdoc-object-merge)
+
 #### Merges JavaScript objects recursively without altering the objects merged.
 
 [![NPM](https://nodei.co/npm/object-merge.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/object-merge)
@@ -76,7 +79,8 @@
         "srcFormat": "atropa-jsformatter ./src/object-merge.js ./src/object-merge.js",
         "test": "jasmine-node specs/"
     },
-    "version": "2.5.1"
+    "version": "2.5.1",
+    "bin": {}
 }
 ```
 
