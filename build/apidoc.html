@@ -81,45 +81,116 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.object-merge.object_merge">
-            function <span class="apidocSignatureSpan">object-merge.</span>object_merge
-            <span class="apidocSignatureSpan">(shadows)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.object-merge.toString">
-            function <span class="apidocSignatureSpan">object-merge.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">object-merge.</span>jasmine</span>
 
         </li>
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.object-merge.createOptions">module object-merge.createOptions</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.object-merge.jasmine">module object-merge.jasmine</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.object-merge.createOptions.createOptions">
-            function <span class="apidocSignatureSpan">object-merge.</span>createOptions
-            <span class="apidocSignatureSpan">(opts)</span>
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.jasmine.afterEach">
+            function <span class="apidocSignatureSpan">object-merge.jasmine.</span>afterEach
+            <span class="apidocSignatureSpan">(afterEachFunction)</span>
             </a>
 
         </li>
 
-    </ol></li>
+        <li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.object-merge.toString">module object-merge.toString</a><ol>
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.jasmine.beforeEach">
+            function <span class="apidocSignatureSpan">object-merge.jasmine.</span>beforeEach
+            <span class="apidocSignatureSpan">(beforeEachFunction)</span>
+            </a>
+
+        </li>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.object-merge.toString.toString">
-            function <span class="apidocSignatureSpan">object-merge.</span>toString
-            <span class="apidocSignatureSpan">()</span>
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.jasmine.describe">
+            function <span class="apidocSignatureSpan">object-merge.jasmine.</span>describe
+            <span class="apidocSignatureSpan">(description, specDefinitions)</span>
             </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.jasmine.expect">
+            function <span class="apidocSignatureSpan">object-merge.jasmine.</span>expect
+            <span class="apidocSignatureSpan">(actual)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.jasmine.it">
+            function <span class="apidocSignatureSpan">object-merge.jasmine.</span>it
+            <span class="apidocSignatureSpan">(desc, func)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.jasmine.runs">
+            function <span class="apidocSignatureSpan">object-merge.jasmine.</span>runs
+            <span class="apidocSignatureSpan">(func)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.jasmine.spyOn">
+            function <span class="apidocSignatureSpan">object-merge.jasmine.</span>spyOn
+            <span class="apidocSignatureSpan">(obj, methodName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.jasmine.waits">
+            function <span class="apidocSignatureSpan">object-merge.jasmine.</span>waits
+            <span class="apidocSignatureSpan">(timeout)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.jasmine.waitsFor">
+            function <span class="apidocSignatureSpan">object-merge.jasmine.</span>waitsFor
+            <span class="apidocSignatureSpan">(latchFunction, optional_timeoutMessage, optional_timeout)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.jasmine.xdescribe">
+            function <span class="apidocSignatureSpan">object-merge.jasmine.</span>xdescribe
+            <span class="apidocSignatureSpan">(description, specDefinitions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.object-merge.jasmine.xit">
+            function <span class="apidocSignatureSpan">object-merge.jasmine.</span>xit
+            <span class="apidocSignatureSpan">(desc, func)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">object-merge.</span>jasmine</span>
 
         </li>
 
@@ -260,134 +331,290 @@
     return new F();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var b = {
-    &#x27;b1&#x27; : {
-        &#x27;b2&#x27; : {
-            &#x27;b3&#x27; : {}
-        }
-    }
+  {
+    &#x22;name&#x22;: &#x22;kastor&#x22;,
+    &#x22;email&#x22;: &#x22;matthewkastor@gmail.com&#x22;
+  }
+],
+&#x22;name&#x22;: &#x22;object-merge&#x22;,
+&#x22;optionalDependencies&#x22;: {},
+&#x22;readme&#x22;: &#x22;# object-merge\r\n\r\nMerges JavaScript objects recursively without altering the objects merged.\r\n\r\n## Installation\r\n\r\n```\r\nnpm install object-merge\r\n```\r\n\r\nhttps://npmjs.org/package/object-merge\r\nSource code available at: https://github.com/matthewkastor/object-merge/\r\n\r\n## Usage\r\n\r\nIn Node:\r\n\r\n```\r\nvar objectMerge = require(&#x27;object-merge&#x27;);\r\nvar x = {\r\n    a : &#x27;a&#x27;,\r\n    b : &#x27;b&#x27;,\r\n    c : {\r\n        d : &#x27;d&#x27;,\r\n        e : &#x27;e&#x27;,\r\n        f : {\r\n            g : &#x27;g&#x27;\r\n        }\r\n    }\r\n};\r\nvar y = {\r\n    a : &#x27;`a&#x27;,\r\n    b : &#x27;`b&#x27;,\r\n    c : {\r\n        d : &#x27;`d&#x27;\r\n    }\r\n};\r\nvar z = {\r\n    a : {\r\n        b : &#x27;``b&#x27;\r\n    },\r\n    fun : function foo () {\r\n        return &#x27;foo&#x27;;\r\n    },\r\n    aps : Array.prototype.slice\r\n};\r\nvar out = objectMerge(x, y, z);\r\n// out.a will be {\r\n//         b : &#x27;``b&#x27;\r\n//     }\r\n// out.b will be &#x27;`b&#x27;\r\n// out.c will be {\r\n//         d : &#x27;`d&#x27;,\r\n//         e : &#x27;e&#x27;,\r\n//         f : {\r\n//             g : &#x27;g&#x27;\r\n//         }\r\n//     }\r\n// out.fun will be a clone of z.fun\r\n// out.aps will be equal to z.aps\r\n```\r\n\r\nMerging arrays is not the same as `concat`. When they&#x27;re merged the arrays are\r\n handled as objects. This means that indexes are object properties with numeric\r\n names. Merging `[&#x27;a&#x27;]` with `[&#x27;b&#x27;]` will give you `[&#x27;b&#x27;]` because the two\r\n arrays both have a property `0` and the last one in overrides the first.\r\n However, merging `arr1[&#x27;a&#x27;, &#x27;b&#x27;]` with `arr2[1] = &#x27;override&#x27;` will give you\r\n `[&#x27;a&#x27;, &#x27;override&#x27;]` because `arr1` has properties `0` and `1`, while `arr2`\r\n only has the property `1` which overrides `arr1[1]` in the output.\r\n\r\nMerging functions will cause the output function to be a clone of the last\r\n function merged and it will have all the properties of the merged functions\r\n recursively merged together. So something like:\r\n\r\n```\r\nvar func = function () {\r\n    return null;\r\n};\r\nvar func2 = function () {\r\n    return &#x27;hello&#x27;;\r\n};\r\nfunc.wohoo = &#x27;wohoo&#x27;;\r\nfunc.obj = {a:&#x27;a&#x27;};\r\nfunc2.wee = &#x27;wee&#x27;;\r\nfunc2.obj = {b:&#x27;b&#x27;};\r\nfunc2.obj2 = {a:&#x27;a&#x27;};\r\nvar out = objectMerge(func, func2);\r\n```\r\n\r\nwill give you a function `out` that is a clone of `func2`&#x27;s function definition\r\n but has the properties: `wohoo`, `obj`, `wee`, and `obj2`. `out.obj` will have\r\n the properties `a` and `b` because the properties of `func` and `func2` are\r\n merged recursively.\r\n \r\n### Options\r\n\r\nOptions exist to do things like limit the depth of object traversal and disable\r\n errors on detection of circular references. In order to specify the options you\r\n must create an options object using the provided method `createOptions`, a\r\n normal object just won&#x27;t work.\r\n\r\n```\r\nvar objectMerge = require(&#x27;object-merge&#x27;);\r\nvar a = {\r\n    &#x27;a1&#x27; : {\r\n        &#x27;a2&#x27; : {\r\n            &#x27;a3&#x27; : {}\r\n        }\r\n    }\r\n};\r\nvar b = {\r\n    &#x27;b1&#x27; : {\r\n        &#x27;b2&#x27; : {\r\n            &#x27;b3&#x27; : {}\r\n        }\r\n    }\r\n};\r\nvar opts = objectMerge.<span class="apidocCodeKeywordSpan">createOptions</span>({depth : 2});\r\nvar res = objectMerge(opts, a, b);\r\n// res will be\r\n// {\r\n//     &#x27;a1&#x27; : {\r\n//         &#x27;a2&#x27; : {}\r\n//     },\r\n//     &#x27;b1&#x27; : {\r\n//         &#x27;b2&#x27; : {}\r\n//     }\r\n// }\r\n```\r\n\r\nSee the tests in `browser/tests` for more examples and expected outputs.\r\n\r\nIn the browser, include `./browser/object-merge_web.js` in your page.\r\n `objectMerge` will be available in your page.\r\n\r\nFor full documentation see the docs folder.\r\n\r\n## Tests\r\n\r\nTests can be run from the root of this package with\r\n\r\n```\r\nnpm test\r\n```\r\n\r\nThere are also browser tests available in the `browser` directory.\r\n\r\n## Hacking\r\n\r\nThere are several other scripts listed in package.json for development and\r\n hacking on this module. They can be run with `npm run-script` followed by the\r\n scripts property corresponding to the script you want to run. For example,\r\n given a script called `buildDocs`, it could be run from the package root by:\r\n\r\n```\r\nnpm run-script buildDocs\r\n```\r\n\r\n## Author\r\n\r\nMatthew Kastor\r\nmatthewkastor@gmail.com\r\nhttps://plus.google.com/100898583798552211130\r\n\r\n## License\r\n\r\ngpl-3.0\r\nhttp://www.gnu.org/licenses/gpl-3.0-standalone.html&#x22;,
+&#x22;readmeFilename&#x22;: &#x22;Readme.md&#x22;,
+&#x22;repository&#x22;: {
+  &#x22;type&#x22;: &#x22;git&#x22;,
+  &#x22;url&#x22;: &#x22;git://github.com/matthewkastor/object-merge.git&#x22;
+},
+&#x22;scripts&#x22;: {
+  &#x22;buildBrowserModule&#x22;: &#x22;node dev/browserify.js&#x22;,
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.object-merge.jasmine" id="apidoc.module.object-merge.jasmine">module object-merge.jasmine</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.jasmine.afterEach" id="apidoc.element.object-merge.jasmine.afterEach">
+        function <span class="apidocSignatureSpan">object-merge.jasmine.</span>afterEach
+        <span class="apidocSignatureSpan">(afterEachFunction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">afterEach = function (afterEachFunction) {
+  jasmine.getEnv().afterEach(afterEachFunction);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* A function that is called after each spec in a suite.
+*
+* Used for restoring any state that is hijacked during spec execution.
+*
+* @param {Function} afterEachFunction
+*/
+var afterEach = function(afterEachFunction) {
+ jasmine.getEnv().<span class="apidocCodeKeywordSpan">afterEach</span>(afterEachFunction);
 };
-var opts = objectMerge.<span class="apidocCodeKeywordSpan">createOptions</span>({depth : 2});
-var res = objectMerge(opts, a, b);
-// res will be
-// {
-//     &#x27;a1&#x27; : {
-//         &#x27;a2&#x27; : {}
-//     },
-//     &#x27;b1&#x27; : {
+if (isCommonJS) exports.afterEach = afterEach;
+
+/**
+* Defines a suite of specifications.
+*
+* Stores the description and all defined specs in the Jasmine environment as one suite of specs. Variables declared
 ...</pre></li>
     </ul>
 
 
 
     <h2>
-        <a href="#apidoc.element.object-merge.object_merge" id="apidoc.element.object-merge.object_merge">
-        function <span class="apidocSignatureSpan">object-merge.</span>object_merge
-        <span class="apidocSignatureSpan">(shadows)</span>
+        <a href="#apidoc.element.object-merge.jasmine.beforeEach" id="apidoc.element.object-merge.jasmine.beforeEach">
+        function <span class="apidocSignatureSpan">object-merge.jasmine.</span>beforeEach
+        <span class="apidocSignatureSpan">(beforeEachFunction)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function objectMerge(shadows) {
-    &#x27;use strict&#x27;;
-    var objectForeach = require(&#x27;object-foreach&#x27;);
-    var cloneFunction = require(&#x27;clone-function&#x27;);
-    // this is the queue of visited objects / properties.
-    var visited = [];
-    // various merge options
-    var options = {};
-    // gets the sequential trailing objects from array.
-    function getShadowObjects(shadows) {
-        var out = shadows.reduce(function (collector, shadow) {
-                if (shadow instanceof Object) {
-                    collector.push(shadow);
-                } else {
-                    collector = [];
-                }
-                return collector;
-            }, []);
-        return out;
-    }
-    // gets either a new object of the proper type or the last primitive value
-    function getOutputObject(shadows) {
-        var out;
-        var lastShadow = shadows[shadows.length - 1];
-        if (lastShadow instanceof Array) {
-            out = [];
-        } else if (lastShadow instanceof Function) {
-            try {
-                out = cloneFunction(lastShadow);
-            } catch (e) {
-                throw new Error(e.message);
-            }
-        } else if (lastShadow instanceof Object) {
-            out = {};
-        } else {
-            // lastShadow is a primitive value;
-            out = lastShadow;
-        }
-        return out;
-    }
-    // checks for circular references
-    function circularReferenceCheck(shadows) {
-        // if any of the current objects to process exist in the queue
-        // then throw an error.
-        shadows.forEach(function (item) {
-            if (item instanceof Object &#x26;&#x26; visited.indexOf(item) &#x3e; -1) {
-                throw new Error(&#x27;Circular reference error&#x27;);
-            }
-        });
-        // if none of the current objects were in the queue
-        // then add references to the queue.
-        visited = visited.concat(shadows);
-    }
-    function objectMergeRecursor(shadows, currentDepth) {
-        if (options.depth !== false) {
-            currentDepth = currentDepth ? currentDepth + 1 : 1;
-        } else {
-            currentDepth = 0;
-        }
-        if (options.throwOnCircularRef === true) {
-            circularReferenceCheck(shadows);
-        }
-        var out = getOutputObject(shadows);
-        /*jslint unparam: true */
-        function shadowHandler(val, prop, shadow) {
-            if (out[prop]) {
-                out[prop] = objectMergeRecursor([
-                    out[prop],
-                    shadow[prop]
-                ], currentDepth);
-            } else {
-                out[prop] = objectMergeRecursor([shadow[prop]], currentDepth);
-            }
-        }
-        /*jslint unparam:false */
-        function shadowMerger(shadow) {
-            objectForeach(shadow, shadowHandler);
-        }
-        // short circuits case where output would be a primitive value
-        // anyway.
-        if (out instanceof Object &#x26;&#x26; currentDepth &#x3c;= options.depth) {
-            // only merges trailing objects since primitives would wipe out
-            // previous objects, as in merging {a:&#x27;a&#x27;}, &#x27;a&#x27;, and {b:&#x27;b&#x27;}
-            // would result in {b:&#x27;b&#x27;} so the first two arguments
-            // can be ignored completely.
-            var relevantShadows = getShadowObjects(shadows);
-            relevantShadows.forEach(shadowMerger);
-        }
-        return out;
-    }
-    // determines whether an options object was passed in and
-    // uses it if present
-    // ignore the jslint warning here too.
-    if (arguments[0] instanceof ObjectMergeOptions) {
-        options = arguments[0];
-        shadows = Array.prototype.slice.call(arguments, 1);
-    } else {
-        options = createOptions();
-        shadows = Array.prototype.slice.call(arguments, 0);
-    }
-    return objectMergeRecursor(shadows);
+    <li>description and source-code<pre class="apidocCodePre">beforeEach = function (beforeEachFunction) {
+  jasmine.getEnv().beforeEach(beforeEachFunction);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* A function that is called before each spec in a suite.
+*
+* Used for spec setup, including validating assumptions.
+*
+* @param {Function} beforeEachFunction
+*/
+var beforeEach = function(beforeEachFunction) {
+ jasmine.getEnv().<span class="apidocCodeKeywordSpan">beforeEach</span>(beforeEachFunction);
+};
+if (isCommonJS) exports.beforeEach = beforeEach;
+
+/**
+* A function that is called after each spec in a suite.
+*
+* Used for restoring any state that is hijacked during spec execution.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.jasmine.describe" id="apidoc.element.object-merge.jasmine.describe">
+        function <span class="apidocSignatureSpan">object-merge.jasmine.</span>describe
+        <span class="apidocSignatureSpan">(description, specDefinitions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">describe = function (description, specDefinitions) {
+  return jasmine.getEnv().describe(description, specDefinitions);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* // TODO: a simple suite with a nested describe block
+*
+* @param {String} description A string, usually the class under test.
+* @param {Function} specDefinitions function that defines several specs.
+*/
+var describe = function(description, specDefinitions) {
+ return jasmine.getEnv().<span class="apidocCodeKeywordSpan">describe</span>(description, specDefinitions);
+};
+if (isCommonJS) exports.describe = describe;
+
+/**
+* Disables a suite of specifications.  Used to disable some suites in a file, or files, temporarily during development.
+*
+* @param {String} description A string, usually the class under test.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.jasmine.expect" id="apidoc.element.object-merge.jasmine.expect">
+        function <span class="apidocSignatureSpan">object-merge.jasmine.</span>expect
+        <span class="apidocSignatureSpan">(actual)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">expect = function (actual) {
+  return jasmine.getEnv().currentSpec.expect(actual);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* It is passed an Object that is the actual value and should chain to one of the many
+* jasmine.Matchers functions.
+*
+* @param {Object} actual Actual value to test against and expected value
+* @return {jasmine.Matchers}
+*/
+var expect = function(actual) {
+ return jasmine.getEnv().currentSpec.<span class="apidocCodeKeywordSpan">expect</span>(actual);
+};
+if (isCommonJS) exports.expect = expect;
+
+/**
+* Defines part of a jasmine spec.  Used in cominbination with waits or waitsFor in asynchrnous specs.
+*
+* @param {Function} func Function that defines part of a jasmine spec.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.jasmine.it" id="apidoc.element.object-merge.jasmine.it">
+        function <span class="apidocSignatureSpan">object-merge.jasmine.</span>it
+        <span class="apidocSignatureSpan">(desc, func)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">it = function (desc, func) {
+  return jasmine.getEnv().it(desc, func);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*   expect(true).toEqual(true);
+* });
+*
+* @param {String} desc description of this specification
+* @param {Function} func defines the preconditions and expectations of the spec
+*/
+var it = function(desc, func) {
+ return jasmine.getEnv().<span class="apidocCodeKeywordSpan">it</span>(desc, func);
+};
+if (isCommonJS) exports.it = it;
+
+/**
+* Creates a &#x3c;em&#x3e;disabled&#x3c;/em&#x3e; Jasmine spec.
+*
+* A convenience method that allows existing specs to be disabled temporarily during development.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.jasmine.runs" id="apidoc.element.object-merge.jasmine.runs">
+        function <span class="apidocSignatureSpan">object-merge.jasmine.</span>runs
+        <span class="apidocSignatureSpan">(func)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">runs = function (func) {
+  jasmine.getEnv().currentSpec.runs(func);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+* Defines part of a jasmine spec.  Used in cominbination with waits or waitsFor in asynchrnous specs.
+*
+* @param {Function} func Function that defines part of a jasmine spec.
+*/
+var runs = function(func) {
+ jasmine.getEnv().currentSpec.<span class="apidocCodeKeywordSpan">runs</span>(func);
+};
+if (isCommonJS) exports.runs = runs;
+
+/**
+* Waits a fixed time period before moving to the next block.
+*
+* @deprecated Use waitsFor() instead
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.jasmine.spyOn" id="apidoc.element.object-merge.jasmine.spyOn">
+        function <span class="apidocSignatureSpan">object-merge.jasmine.</span>spyOn
+        <span class="apidocSignatureSpan">(obj, methodName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spyOn = function (obj, methodName) {
+  return jasmine.getEnv().currentSpec.spyOn(obj, methodName);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @see jasmine.createSpy
+* @param obj
+* @param methodName
+* @return {jasmine.Spy} a Jasmine spy that can be chained with all spy methods
+*/
+var spyOn = function(obj, methodName) {
+ return jasmine.getEnv().currentSpec.<span class="apidocCodeKeywordSpan">spyOn</span>(obj, methodName);
+};
+if (isCommonJS) exports.spyOn = spyOn;
+
+/**
+* Creates a Jasmine spec that will be added to the current suite.
+*
+* // TODO: pending tests
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.jasmine.waits" id="apidoc.element.object-merge.jasmine.waits">
+        function <span class="apidocSignatureSpan">object-merge.jasmine.</span>waits
+        <span class="apidocSignatureSpan">(timeout)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waits = function (timeout) {
+  jasmine.getEnv().currentSpec.waits(timeout);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Waits a fixed time period before moving to the next block.
+*
+* @deprecated Use waitsFor() instead
+* @param {Number} timeout milliseconds to wait
+*/
+var waits = function(timeout) {
+ jasmine.getEnv().currentSpec.<span class="apidocCodeKeywordSpan">waits</span>(timeout);
+};
+if (isCommonJS) exports.waits = waits;
+
+/**
+* Waits for the latchFunction to return true before proceeding to the next block.
+*
+* @param {Function} latchFunction
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.object-merge.jasmine.waitsFor" id="apidoc.element.object-merge.jasmine.waitsFor">
+        function <span class="apidocSignatureSpan">object-merge.jasmine.</span>waitsFor
+        <span class="apidocSignatureSpan">(latchFunction, optional_timeoutMessage, optional_timeout)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waitsFor = function (latchFunction, optional_timeoutMessage, optional_timeout) {
+  jasmine.getEnv().currentSpec.waitsFor.apply(jasmine.getEnv().currentSpec, arguments);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -395,107 +622,66 @@ var res = objectMerge(opts, a, b);
 
 
     <h2>
-        <a href="#apidoc.element.object-merge.toString" id="apidoc.element.object-merge.toString">
-        function <span class="apidocSignatureSpan">object-merge.</span>toString
-        <span class="apidocSignatureSpan">()</span>
+        <a href="#apidoc.element.object-merge.jasmine.xdescribe" id="apidoc.element.object-merge.jasmine.xdescribe">
+        function <span class="apidocSignatureSpan">object-merge.jasmine.</span>xdescribe
+        <span class="apidocSignatureSpan">(description, specDefinitions)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
+    <li>description and source-code<pre class="apidocCodePre">xdescribe = function (description, specDefinitions) {
+  return jasmine.getEnv().xdescribe(description, specDefinitions);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
- * @param {Function} func The function to clone.
- * @returns {Function} Returns a clone of the non native function, or a
- *  reference to the native function.
+/**
+ * Disables a suite of specifications.  Used to disable some suites in a file, or files, temporarily during development.
+ *
+ * @param {String} description A string, usually the class under test.
+ * @param {Function} specDefinitions function that defines several specs.
  */
-function cloneFunction(func) {
-var out, str;
-try {
-    str = func.<span class="apidocCodeKeywordSpan">toString</span>();
-    if (/\[native code\]/.test(str)) {
-        out = func;
-    } else {
-        out = eval(&#x27;(function(){return &#x27; + str + &#x27;}());&#x27;);
-    }
-} catch (e) {
-    throw new Error(e.message + &#x27;\r\n\r\n&#x27; + str);
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.object-merge.createOptions" id="apidoc.module.object-merge.createOptions">module object-merge.createOptions</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.object-merge.createOptions.createOptions" id="apidoc.element.object-merge.createOptions.createOptions">
-        function <span class="apidocSignatureSpan">object-merge.</span>createOptions
-        <span class="apidocSignatureSpan">(opts)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function createOptions(opts) {
-    &#x27;use strict&#x27;;
-    var argz = Array.prototype.slice.call(arguments, 0);
-    argz.unshift(null);
-    var F = ObjectMergeOptions.bind.apply(ObjectMergeOptions, argz);
-    return new F();
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-var b = {
-    &#x27;b1&#x27; : {
-        &#x27;b2&#x27; : {
-            &#x27;b3&#x27; : {}
-        }
-    }
+var xdescribe = function(description, specDefinitions) {
+return jasmine.getEnv().<span class="apidocCodeKeywordSpan">xdescribe</span>(description, specDefinitions);
 };
-var opts = objectMerge.<span class="apidocCodeKeywordSpan">createOptions</span>({depth : 2});
-var res = objectMerge(opts, a, b);
-// res will be
-// {
-//     &#x27;a1&#x27; : {
-//         &#x27;a2&#x27; : {}
-//     },
-//     &#x27;b1&#x27; : {
+if (isCommonJS) exports.xdescribe = xdescribe;
+
+
+// Provide the XMLHttpRequest class for IE 5.x-6.x:
+jasmine.XmlHttpRequest = (typeof XMLHttpRequest == &#x22;undefined&#x22;) ? function() {
+function tryIt(f) {
 ...</pre></li>
     </ul>
 
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.object-merge.toString" id="apidoc.module.object-merge.toString">module object-merge.toString</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.object-merge.toString.toString" id="apidoc.element.object-merge.toString.toString">
-        function <span class="apidocSignatureSpan">object-merge.</span>toString
-        <span class="apidocSignatureSpan">()</span>
+        <a href="#apidoc.element.object-merge.jasmine.xit" id="apidoc.element.object-merge.jasmine.xit">
+        function <span class="apidocSignatureSpan">object-merge.jasmine.</span>xit
+        <span class="apidocSignatureSpan">(desc, func)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">xit = function (desc, func) {
+  return jasmine.getEnv().xit(desc, func);
+}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
- * @param {Function} func The function to clone.
- * @returns {Function} Returns a clone of the non native function, or a
- *  reference to the native function.
- */
-function cloneFunction(func) {
-var out, str;
-try {
-    str = func.<span class="apidocCodeKeywordSpan">toString</span>();
-    if (/\[native code\]/.test(str)) {
-        out = func;
-    } else {
-        out = eval(&#x27;(function(){return &#x27; + str + &#x27;}());&#x27;);
-    }
-} catch (e) {
-    throw new Error(e.message + &#x27;\r\n\r\n&#x27; + str);
+*
+* A convenience method that allows existing specs to be disabled temporarily during development.
+*
+* @param {String} desc description of this specification
+* @param {Function} func defines the preconditions and expectations of the spec
+*/
+var xit = function(desc, func) {
+ return jasmine.getEnv().<span class="apidocCodeKeywordSpan">xit</span>(desc, func);
+};
+if (isCommonJS) exports.xit = xit;
+
+/**
+* Starts a chain for a Jasmine expectation.
+*
+* It is passed an Object that is the actual value and should chain to one of the many
 ...</pre></li>
     </ul>
+
+
 
 
 </div>
